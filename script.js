@@ -1,4 +1,4 @@
-const jsonFile = '/assets/data.json';
+const jsonFile = './data.json';
 
 const cards = document.querySelectorAll('.card');
 let activity = document.querySelectorAll('.exercise');
@@ -54,7 +54,7 @@ function getData(data) {
 
 	})
 	// defualt data
-	getMonthly(data);
+	getWeekly(data);
 }
 
 // get daily data
