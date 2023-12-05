@@ -1,4 +1,4 @@
-const jsonFile = '/data.json';
+const jsonFile = '/../data.json';
 
 const cards = document.querySelectorAll('.card');
 let activity = document.querySelectorAll('.exercise');
@@ -20,7 +20,7 @@ fetch(jsonFile)
 	.then(data => {
 		// Work with the JSON data
 		getData(data);
-		console.log(data[0].timeframes)
+	
 	})
 	.catch(error => {
 		console.error('Error fetching the JSON file:', error);
