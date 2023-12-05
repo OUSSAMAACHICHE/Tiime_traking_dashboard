@@ -8,24 +8,25 @@ let lastWeek = document.querySelectorAll('.last_week span');
 
 
 // Fetch the JSON file
-fetch(jsonFile)
-	.then(response => {
+async function fetchData() {
+	try {
+		const response = await fetch(jsonFile);
+
 		// Check if the request was successful
 		if (!response.ok) {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
-		// Parse the JSON response
-		return response.json();
-	})
-	.then(data => {
+
+		const data = await response.json();
+
 		// Work with the JSON data
 		getData(data);
-	
-	})
-	.catch(error => {
-		console.error('Error fetching the JSON file:', error);
-	});
+	} catch(error) {
+		console.error('Error fetching the json file:',error)
+	}
+}
 
+fetchData();
 
 
 function getData(data) {
