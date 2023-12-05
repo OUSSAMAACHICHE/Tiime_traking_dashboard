@@ -1,4 +1,4 @@
-const jsonFile = '../../data.json';
+const jsonFile = '/data.json';
 
 const cards = document.querySelectorAll('.card');
 let activity = document.querySelectorAll('.exercise');
