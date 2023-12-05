@@ -1,0 +1,217 @@
+:root {
+	/* ## Colors */
+
+/* ### Primary */
+
+--Blue: hsl(246, 80%, 60%);
+
+--Light-red-work: hsl(15, 100%, 70%);
+--Soft-blue-play: hsl(195, 74%, 62%);
+--Light-red-study: hsl(348, 100%, 68%);
+--Lime-green-exercise: hsl(145, 58%, 55%);
+--Violet-social: hsl(264, 64%, 52%);
+--Soft-orange-self-care: hsl(43, 84%, 65%);
+
+/* ### Neutral */
+
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+}
+
+* {
+	font-family: 'Rubik', sans-serif;
+	box-sizing: border-box;
+}
+body {
+	background-color: var(--Very-dark-blue);
+	color: white;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+	min-height: 100vh;
+}
+main {
+	display: grid;
+	grid-template-columns: repeat(4,minmax(100px,230px));
+	grid-template-rows: repeat(auto);
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	gap: 30px;
+}
+@media (max-width: 963px) {
+	main {
+		grid-template-columns: 1fr;
+	}
+}
+.box {
+	grid-row: 1/3;
+	background-color: var(--Dark-blue);
+	border-radius: 15px;
+	overflow: hidden;
+}
+.box .user {
+	background-color: var(--Blue);
+	padding: 25px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.box .user img {
+	max-width: 70px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+}
+.user p {
+	color: var(--Pale-Blue);
+	font-size: 0.9rem;
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+.user .title {
+	font-weight: 100;
+	margin-top: 0;
+	font-size: 2.5rem;
+	margin-bottom: 50px;
+}
+.box .date {
+	color: var(--Desaturated-blue);
+	padding: 0 25px;
+	cursor: pointer;
+	width: fit-content;
+	transition: all 0.3s;
+}
+.box .date:hover {
+	color: #fff;
+}
+.box .date:nth-child(4) {
+	margin-bottom: 25px;
+}
+.box .date.active {
+	color: #fff;
+}
+@media (max-width: 963px) {
+	.box {
+		margin-top: 70px;
+	}
+	.box .user {
+		display: flex;
+		align-items: center;
+		padding: 25px;
+	}
+	.user .title {
+		font-size: 1.3rem;
+		margin: 0;
+	}
+	.user p {
+		margin: 0;
+	}
+	.user img {
+		width: 60px;
+		margin-right: 15px;
+	}
+	.fullDate {
+		display: flex;
+	}
+}
+/* End box Style  */
+/* Start card styleing  */
+.card {
+	background-size: 70px;
+	background-position: 90% -5px;
+	background-repeat: no-repeat;
+	padding-top: 45px;
+	border-radius: 15px;
+}
+.card .details {
+	background-color: var(--Dark-blue);
+	padding: 10px 25px 25px;
+	border-radius: 13px;
+	cursor: pointer;
+	transition: all .3s;
+}
+.card .details:hover {
+	background-color: hsl(236, 40%, 31%);
+}
+.work {
+	background-image: url('../images/icon-work.svg');
+	background-color: var(--Light-red-work);
+}
+.play {
+	background-image: url('../images/icon-play.svg');
+	background-color: var(--Soft-blue-play);
+}
+.study {
+	background-image: url('../images/icon-study.svg');
+	background-color: var(--Light-red-study);
+}
+.exercises {
+	background-image: url('../images/icon-exercise.svg');
+	background-color: var(--Lime-green-exercise);
+}
+.social {
+	background-image: url('../images/icon-social.svg');
+	background-color: var(--Violet-social);
+}
+.self-care {
+	background-image: url('../images/icon-self-care.svg');
+	background-color: var(--Soft-orange-self-care);
+}
+.card .hobby {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.card .hobby img {
+	width: 20px;
+	cursor: pointer;
+}
+
+.card .hobby .exercise {
+	font-weight: 500;
+}
+.card .times {
+	font-size: 3rem;
+	font-weight: 100;
+}
+.card .last_week {
+	font-size: 0.9rem;
+	color: var(--Pale-Blue);
+	text-transform: capitalize;
+}
+
+@media (max-width: 963px) {
+	.card:last-child {
+		margin-bottom: 70px;
+	}
+	.card .info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.card .info .times {
+		font-size: 1.6rem;
+	}
+	.card .info .last_week {
+		font-size: 0.9rem;
+	}
+	.details .hobby .exercise {
+		margin-bottom: 10px;
+	}
+}
+
+
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: fixed;
+	bottom: 5px;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
